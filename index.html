@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script scr="respond.min.js">
+    </script>  
+<style type="text/css">
+#clock{
+    font-size: 30px;  padding: 50px;
+    margin-top: 300px; color: #f606f6;
+    background:#00f;     
+}
+.myDiv{
+  text-align: center;
+}
+
+</style>
+<script>
+    window.setTimeout("showTim()",1000);
+    function getVNTim() {
+        var tim =  new Date();
+        var hr = tim.getHours();
+        var min = tim.getMinutes();
+        var sec = tim.getSeconds();
+        hr = ((hr<10) ? "0" : "") + hr;
+        min = ((min<10) ? "0" : "") + min;
+        sec = ((sec<10) ? "0" : "") + sec;
+        return hr + ":" + min + ":" + sec
+
+    }
+    function showTim(){
+        var clock = document.getElementById("clock");
+        if(clock != null)
+        clock.innerHTML = getVNTim();
+        setTimeout("showTim()",1000);
+
+    }
+</script> 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khanh</title>
+</head>
+<body>
+    <div class="gridContainer clearfix">
+        <div id="LayoutDiv1">
+            <div id="clock", class="myDiv">
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
